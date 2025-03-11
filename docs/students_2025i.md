@@ -12,3 +12,5 @@ David Stiven Silva Velandia
 Nicolas Sanabria c:
 
 Cristian Castelblanco
+
+Cristian Collazos
