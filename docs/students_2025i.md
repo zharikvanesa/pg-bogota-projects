@@ -1,7 +1,21 @@
 Docente:
+
 Cristhian Moreno
 
+
 Estudiantes:
+
+Cristian Gonzalez
+
+Gonzalo Enrique Gonzalez
+
+Johana Saavedra
+
+laura lesmes
+
+Brayan Fuentes
+
+William Fernando Guerrero
 
 Steven Alejandro Sandoval Cardozo
 
@@ -13,4 +27,9 @@ Nicolas Sanabria c:
 
 Cristian Castelblanco
 
-    Jennifer Rodríguez P.
+Jennifer Rodríguez P.
+
+Cristian Collazos
+
+Natalia Santofimio 
+
