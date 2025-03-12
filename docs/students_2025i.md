@@ -27,5 +27,6 @@ Nicolas Sanabria c:
 
 Cristian Castelblanco
 
-Natalia Santofimio 
+Cristian Collazos
 
+Natalia Santofimio 
