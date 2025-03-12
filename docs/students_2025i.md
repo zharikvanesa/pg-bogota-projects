@@ -1,9 +1,12 @@
-Docente:
+## Docente:
 
-Cristhian Moreno
+`Cristhian Moreno`
+
+## Estudiantes Grupo 2B
 
 
-Estudiantes:
+
+## Estudiantes Grupo 3B
 
 Cristian Gonzalez
 
