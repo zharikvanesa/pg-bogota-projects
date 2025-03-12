@@ -5,6 +5,8 @@ Cristhian Moreno
 
 Estudiantes:
 
+Gonzalo Enrique Gonzalez
+
 Johana Saavedra
 
 laura lesmes
