@@ -79,13 +79,14 @@ Implementar una base de datos PostgreSQL que centralice información de asentami
 
 ---
 
-### **Rúbrica Simplificada**  
-| **Criterio**          | **Insuficiente**               | **Satisfactorio**                 |  
-|-----------------------|--------------------------------|-----------------------------------|  
-| **Modelado**          | JSONB mal implementado        | Uso efectivo de JSONB para atributos variables |  
-| **Búsquedas**         | LIKE básico                   | Full-Text Search con índice GIN   |  
-| **Seguridad**         | Datos sensibles en texto plano| Cifrado funcional con pgcrypto    |  
-| **Colaboración**      | Commits sin mensajes claros   | 8+ commits con convención semántica |  
+#### **Rúbrica desde el Modelado**  
+| **Criterio**          | **Insuficiente**               | **Satisfactorio**                 | **Excelente**                     |  
+|-----------------------|--------------------------------|-----------------------------------|-----------------------------------|  
+| **Modelado (30%)**    | JSONB sin estructura definida | ER con JSONB para atributos variables y relaciones básicas | Uso de JSON Schema validation + subtipos (ej: viviendas temporales/permanentes) |  
+| **Búsquedas (25%)**   | LIKE básico sin índices | Full-Text Search con índice GIN y stopwords en español | Búsquedas ponderadas por relevancia (ej: `ts_rank`) |  
+| **Seguridad (20%)**   | Datos sensibles en texto plano | Cifrado con `pgcrypto` y RLS básico | RLS multicriterio (ej: horario de acceso) + encriptación AES-256 |  
+| **Geospacial (15%)**  | Coordenadas sin consultas útiles | Consultas con `ST_Contains` y `ST_Buffer` | Análisis de densidad poblacional con `ST_ClusterDBSCAN` |  
+| **IA Ética (10%)**    | Sin documentación de IA | 1 prompt con mejoras documentadas | Comparativa entre 3 alternativas generadas por IA y selección justificada | 
 
 ---
 
