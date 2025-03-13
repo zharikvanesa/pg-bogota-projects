@@ -4,6 +4,10 @@
 
 ## Estudiantes Grupo 2B
 
+
+
+Helen Calderon
+
 Zharik Echeverria
 
 Angie Vanegas
@@ -13,6 +17,7 @@ Carlos Andres Quintero
 william Andres Ambito Casso
 
 Yeraldine alvarado
+
 
 ## Estudiantes Grupo 3B
 
