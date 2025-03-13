@@ -4,7 +4,7 @@
 
 ## Estudiantes Grupo 2B
 
-YERALDINE ALVARADO
+Yeraldine alvarado
 
 ## Estudiantes Grupo 3B
 
