@@ -4,7 +4,12 @@
 
 ## Estudiantes Grupo 2B
 
+Carlos Andres Quintero
+
+william Andres Ambito Casso
+
 Yeraldine alvarado
+
 
 ## Estudiantes Grupo 3B
 
