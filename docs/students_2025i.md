@@ -54,3 +54,5 @@ Cristian Collazos
 
 Natalia Santofimio 
 
+Bryan Velez
+
