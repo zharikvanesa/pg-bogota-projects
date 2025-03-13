@@ -14,6 +14,10 @@
     <br> 2.2 [Estrategia de Branching](#22-estrategia-de-branching)
     <br> 2.3 [Relación Issues-Commit](#23-relación-issues-commit)
     <br> 2.4 [Lineamientos para Pull Requests](#24-lineamientos-para-pull-requests)
+3. [Estructura de Proyecto Recomendada](#3-estructura-de-proyecto-recomendada)
+    <br> 3.1 [Explicación por Sección](#31-explicación-por-sección)
+    <br> 3.2 [Notas Clave para Estudiantes](#32-notas-clave-para-estudiantes)
+    <br> 3.3 [Reglas para Nombrado de Archivos](#33-reglas-para-nombrado-de-archivos)   
 
 ---
 
@@ -284,3 +288,123 @@ Los Pull Requests deben incluir una descripción detallada de los cambios realiz
    - ✅ Al menos 2 aprobaciones de compañeros
    - ✅ Todos los tests en GitHub Actions pasan
    - ✅ Documentación actualizada
+
+---
+
+## 3. Estructura de Proyecto Recomendada
+
+La estructura de un proyecto de bases de datos urbanas en Bogotá debe seguir una organización clara y coherente para facilitar la colaboración y el mantenimiento. La siguiente estructura de proyecto se basa en las mejores prácticas de la industria.
+
+```bash
+Proyecto_1_Calidad_Aire/            # Nombre del proyecto (ej: 1_Calidad_Aire)
+│
+├── data/
+│   ├── raw/                        # Datos originales (CSV, GeoJSON, Shapefiles)
+│   │   ├── estaciones_ideam.csv    # Datos crudos de 14 estaciones (ID, nombre, lat, lon)
+│   │   └── hospitalizaciones.json  # Registros de salud 2023-2024
+│   │
+│   └── processed/                  # Datos transformados (listos para carga)
+│       ├── estaciones_normalizadas.csv  # Sin duplicados, coordenadas en WGS84
+│       └── aire_hospital.sql        # Datos unificados para carga masiva
+│
+├── database/
+│   ├── ddl/                        # Definición de estructura
+│   │   ├── 01_tables.sql           # CREATE TABLE estaciones, mediciones...
+│   │   ├── 02_indexes.sql          # Índices y optimizaciones -> CREATE INDEX idx_pm25 ON mediciones...
+│   │   └── 03_security.sql         # RLS y pgcrypto -> ALTER TABLE... ENABLE ROW LEVEL SECURITY
+│   │
+│   ├── dml/                        # Datos iniciales
+│   │   └── initial_data.sql        # Inserciones básicas
+│   │
+│   ├── functions/                  # Lógica de negocio
+│   │   ├── calcular_promedio.sql
+│   │   ├── generar_alerta.sql
+│   │   └── calcular_ica.sql        # Función que calcula Índice de Calidad del Aire
+│   │
+│   └── triggers/                   # Automatizaciones
+│       ├── alerta_contaminacion.sql
+│       └── alerta_pm25.sql         # Trigger que inserta en tabla alertas
+│
+├── etl/                            # Scripts de transformación
+│   ├── data_cleaning.py           # Limpieza con Pandas, Ej: Elimina registros con PM2.5 < 0
+│   ├── load_to_postgres.py        # Carga a la BD, Ej: Usa psycopg2 para cargar CSV a PostgreSQL
+│   └── requirements.txt           # Dependencias Python (si aplica): pandas==2.0.3, sqlalchemy==2.0.0
+│
+├── docs/                           # Documentación
+│   ├── er_diagram.md              # Modelo Entidad-Relación mermaid
+│   ├── decisions.md               # Justificación técnica, Ej: # "¿Por qué elegimos PostGIS sobre MongoDB?
+│   ├── legal/                     # Documentos legales
+│   │   ├── privacy_policy.md      # Política de privacidad
+│   │   └── consent.md             # Consentimiento de datos
+│   │
+│   └── ia_audit/                  # Uso de IA
+│       ├── prompts_usados.md      # Historial de prompts, Ej: "Genera función SQL para promedio semanal PM2.5"
+│       └── codigo_modificado/     # Modificaciones al código generado por ChatGPT
+│
+├── tests/                         # Pruebas básicas
+│   ├── test_queries.sql           # SELECT * FROM alertas WHERE...
+│   └── test_triggers.sql          # Simula inserción que debe activar alerta
+├── README.md                      # Instrucciones generales
+```
+
+### 3.1. **Explicación por Sección**  
+1. **`data/`**  
+   - **Raw:** Datos originales *inalterados* (preservar fuentes).  
+     *Ej: CSV descargado del [Sistema de Monitoreo de Bogotá](https://datosabiertos.bogota.gov.co/)*.  
+   - **Processed:** Datos limpios y estructurados para la BD.  
+     *Ej: CSV con coordenadas convertidas a WGS84 usando Python*.
+
+2. **`database/`**  
+   - **DDL:** Scripts SQL ordenados secuencialmente:  
+     ```sql
+     -- 01_tables.sql
+     CREATE TABLE estaciones (
+         id SERIAL PRIMARY KEY,
+         nombre VARCHAR(100),
+         ubicacion GEOGRAPHY(POINT)
+     );
+     ```
+   - **Functions/Triggers:** Lógica reusable y automatizaciones.  
+
+3. **`etl/`**  
+   - Scripts en Python para ETL (Extraer, Transformar, Cargar).  
+     *Ej: `data_cleaning.py` filtra registros inválidos de PM2.5*.
+
+4. **`docs/`**  
+   - **IA Audit:** Registro ético del uso de IA.  
+     *Ej: Captura de prompt usado en ChatGPT y cómo se mejoró su solución*.
+
+5. **`tests/`**  
+   - Validaciones básicas:  
+     ```sql
+     -- test_triggers.sql
+     INSERT INTO mediciones (pm25, estacion_id) VALUES (35, 1);  -- Debe generar alerta
+     ```
+
+### 3.2. **Notas Clave para Estudiantes**  
+1. **Versionado Incremental:**  
+   - Numerar scripts SQL (`01_`, `02_`) para controlar orden de ejecución.  
+2. **Git Diario:**  
+   - Hacer commit al final de cada sesión de trabajo con mensajes descriptivos:  
+     *"feat: add trigger for weekly averages calculation"*.  
+3. **Testing Básico:**  
+   - Antes de hacer merge a `main`, ejecutar `test_queries.sql` para verificar datos.  
+4. **Consideraciones Legales:**  
+   - Si usan datos reales de pacientes, agregar anonimización en `data_cleaning.py`.  
+
+### 3.3. **Reglas para Nombrado de Archivos**
+
+Los archivos en el proyecto deben seguir una convención de nombres clara y coherente para facilitar la identificación y el mantenimiento. Se recomienda utilizar un formato descriptivo y consistente para todos los archivos.
+
+1. **SQL**:  
+   - `[orden]_[tipo]_[descripción].sql`  
+   - Ej: `02_dml_insert_hospitalizaciones.sql`  
+
+2. **Python**:  
+   - `[proceso]_[fuente]_[destino].py`  
+   - Ej: `transform_calidad_aire_postgres.py`  
+
+3. **Geodatos**:  
+   - `[tipo]_[localidad]_[año].[ext]`  
+   - Ej: `poligonos_ciudad_bolivar_2024.geojson`
+
