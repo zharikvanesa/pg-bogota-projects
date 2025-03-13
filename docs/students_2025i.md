@@ -4,11 +4,9 @@
 
 ## Estudiantes Grupo 2B
 Juan David Hernandez Rivera
-
-
 Carlos Andres Quintero
 william Andres Ambito Casso
-YERALDINE ALVARADO
+Yeraldine alvarado
 
 
 ## Estudiantes Grupo 3B
