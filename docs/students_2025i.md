@@ -3,7 +3,7 @@
 `Cristhian Moreno`
 
 ## Estudiantes Grupo 2B
-
+Angie Vanegas
 
 
 ## Estudiantes Grupo 3B
