@@ -1,10 +1,29 @@
 ## **Guía para Crear Diagramas ER con IA: De la Problemática a la Solución**  
-**Caso de Estudio:** Calidad del Aire en Bogotá  
-**Herramientas:** ChatGPT (IA), Draw.io, PostgreSQL, Datos Abiertos Bogotá  
+**Caso de Estudio:** Ejemplo con proyecto de Calidad del Aire en Bogotá  
+**Herramientas:** ChatGPT (IA), PostgreSQL, Datos Abiertos Bogotá  
 
 ---
 
 Primero crear una carpeta en projects con el nombre del proyecto, por ejemplo `00_air_quality_geomonitoring`. Dentro de esta carpeta, organiza tus archivos siguiendo la estructura sugerida en la sección final de esta guía.
+
+---
+
+## Tabla de entregables:
+
+A continuación se muestra una tabla con los entregables sugeridos, organizada por cada etapa del proyecto y con una breve descripción de cada archivo o carpeta:
+
+| **Paso**                        | **Entregable (Archivo/Carpeta)**                  | **Descripción**                                                                                                                     |
+|---------------------------------|---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| **1. Entender el Problema**     | `docs/problem_analysis.md`                       | Reporte de investigación que describe el problema, causas, actores y fuentes de datos.                                              |
+|                                 | `docs/sources_analysis.md`                        | Resumen y validación de fuentes oficiales y referentes utilizados.                                                                  |
+| **2. Definir Requisitos**       | `docs/system_requirements.md`                      | Documento con las user stories, requisitos funcionales y no funcionales, y visión general del sistema.                                |
+|                                 | `docs/functionalities_prioritization.md`            | Matriz de impacto vs. complejidad y priorización de funcionalidades.                                                                |
+| **3. Identificar Entidades y Atributos** | `docs/entities_attributes.md`              | Listado y descripción de las entidades y atributos propuestos, validando su pertinencia con datos reales.                              |
+|                                 | `docs/data_validation.md`                        | Informe que relaciona los elementos teóricos con la disponibilidad de datos.                                                        |
+| **4. Diseñar Relaciones**       | `docs/er_diagram.md`                              | Diagrama Entidad-Relación en formato Mermaid o similar, utilizando notación Crow's Foot.                                              |
+|                                 | `docs/relationship_decisions.md`                   | Justificación y explicación de la lógica detrás de las relaciones definidas entre entidades.                                         |
+| **5. Normalización Asistida por IA** | `docs/normalization.md`                      | Informe del proceso de normalización, detallando la transformación de tablas para eliminar redundancias.                             |
+| **7. Documentar el Uso de IA**  | `docs/ia_audit/prompts_used.md`                 | Historial de prompts y ejemplos de código generado por IA, junto con las modificaciones realizadas.                                  |
 
 ---
 
@@ -211,26 +230,6 @@ El uso de IA en proyectos académicos y profesionales debe ser transparente. Doc
 
 ---
 
-## Tabla de entregables:
-
-A continuación se muestra una tabla con los entregables sugeridos, organizada por cada etapa del proyecto y con una breve descripción de cada archivo o carpeta:
-
-| **Paso**                        | **Entregable (Archivo/Carpeta)**                  | **Descripción**                                                                                                                     |
-|---------------------------------|---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| **1. Entender el Problema**     | `docs/problem_analysis.md`                       | Reporte de investigación que describe el problema, causas, actores y fuentes de datos.                                              |
-|                                 | `docs/sources_analysis.md`                        | Resumen y validación de fuentes oficiales y referentes utilizados.                                                                  |
-| **2. Definir Requisitos**       | `docs/system_requirements.md`                      | Documento con las user stories, requisitos funcionales y no funcionales, y visión general del sistema.                                |
-|                                 | `docs/functionalities_prioritization.md`            | Matriz de impacto vs. complejidad y priorización de funcionalidades.                                                                |
-| **3. Identificar Entidades y Atributos** | `docs/entities_attributes.md`              | Listado y descripción de las entidades y atributos propuestos, validando su pertinencia con datos reales.                              |
-|                                 | `docs/data_validation.md`                        | Informe que relaciona los elementos teóricos con la disponibilidad de datos.                                                        |
-| **4. Diseñar Relaciones**       | `docs/er_diagram.md`                              | Diagrama Entidad-Relación en formato Mermaid o similar, utilizando notación Crow's Foot.                                              |
-|                                 | `docs/relationship_decisions.md`                   | Justificación y explicación de la lógica detrás de las relaciones definidas entre entidades.                                         |
-| **5. Normalización Asistida por IA** | `docs/normalization.md`                      | Informe del proceso de normalización, detallando la transformación de tablas para eliminar redundancias.                             |
-| **7. Documentar el Uso de IA**  | `docs/ia_audit/prompts_used.md`                 | Historial de prompts y ejemplos de código generado por IA, junto con las modificaciones realizadas.                                  |
-|                                 | `docs/ia_audit/modified_code/`                | Carpeta con archivos del código original generado por IA y las versiones ajustadas según las validaciones del proyecto.              |
-
----
-
 ## Estructura de Carpetas
 
 ```bash
@@ -243,19 +242,18 @@ projects/
 │    │       └── hospitalizaciones.json  # Registros de salud 2023-2024
 │    │
 │    ├── docs/                           # Documentación
-│    │   ├── er_diagram.md              # Modelo Entidad-Relación mermaid
 │    │   ├── problem_analysis.md         # Análisis de la problemática
 │    │   ├── sources_analysis.md         # Fuentes de datos y validación
 │    │   ├── system_requirements.md      # Requisitos del sistema
 │    │   ├── functionalities_prioritization.md  # Priorización de funcionalidades
 │    │   ├── entities_attributes.md      # Entidades y atributos
 │    │   ├── data_validation.md          # Validación de datos
-│    │   ├── normalization.md            # Proceso de normalización
+│    │   ├── er_diagram.md              # Modelo Entidad-Relación mermaid
 │    │   ├── relationship_decisions.md   # Justificación de relaciones
+│    │   ├── normalization.md            # Proceso de normalización
 │    │   │
 │    │   └── ia_audit/                  # Uso de IA
 │    │       ├── prompts_used.md      # Historial de prompts, Ej: "Genera función SQL para promedio semanal PM2.5"
-│    │       └── codigo_modificado/     # Modificaciones al código generado por ChatGPT
 ```
 
 ---
