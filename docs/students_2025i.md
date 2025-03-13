@@ -6,6 +6,23 @@
 
 Juan Mancera
 
+Juan David Hernandez Rivera
+
+Angie Delgado
+
+Helen Calderon
+
+Zharik Echeverria
+
+Angie Vanegas
+
+Carlos Andres Quintero
+
+william Andres Ambito Casso
+
+Yeraldine alvarado
+
+
 ## Estudiantes Grupo 3B
 
 Cristian Gonzalez
