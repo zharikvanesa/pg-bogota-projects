@@ -4,7 +4,7 @@
 
 ## Estudiantes Grupo 2B
 
-
+Juan David Hernandez Rivera
 
 ## Estudiantes Grupo 3B
 
