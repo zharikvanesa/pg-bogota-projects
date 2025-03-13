@@ -3,19 +3,13 @@
 `Cristhian Moreno`
 
 ## Estudiantes Grupo 2B
-
+Juan David Hernandez Rivera
 Angie Delgado
-
 Helen Calderon
-
 Zharik Echeverria
-
 Angie Vanegas
-
 Carlos Andres Quintero
-
 william Andres Ambito Casso
-
 Yeraldine alvarado
 
 
