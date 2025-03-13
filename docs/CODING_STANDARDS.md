@@ -3,13 +3,19 @@
 ## Tabla de contenido
 
 1. [Convenciones de Nombrado Mixtas](#1-convenciones-de-nombrado-mixtas)
-2. [Documentación Bilingüe](#2-documentación-bilingüe)
-3. [Ejemplos Complejos Híbridos](#3-ejemplos-complejos-híbridos)
-4. [Estándares de Calidad](#4-estándares-de-calidad)
-5. [Glosario Bilingüe](#5-glosario-bilingüe)
-6. [Justificación de la Estrategia](#6-justificación-de-la-estrategia)
-7. [Control de Versiones con Git](#7-control-de-versiones-con-git)
-8. [Checklist de Control de Versiones](#8-checklist-de-control-de-versiones)
+    <br> 1.1. [Principios Básicos](#11-principios-básicos)
+    <br> 1.2. [Reglas Explícitas](#12-reglas-explícitas)
+    <br> 1.3. [Comentarios en Código](#13-comentarios-en-código)
+    <br> 1.4. [Ejemplos de Código](#15-ejemplos-de-código)
+    <br> 1.5. [Glosario Bilingüe](#16-glosario-bilingüe)
+    <br> 1.6. [Justificación de la Estrategia](#17-justificación-de-la-estrategia)
+2. [Control de Versiones con Git](#2-control-de-versiones-con-git)
+    <br> 2.1 [Estructura de Commits (Conventional Commits)](#21-estructura-de-commits-conventional-commits)
+    <br> 2.2 [Estrategia de Branching](#22-estrategia-de-branching)
+    <br> 2.3 [Relación Issues-Commit](#23-relación-issues-commit)
+    <br> 2.4 [Lineamientos para Pull Requests](#24-lineamientos-para-pull-requests)
+
+---
 
 ## 1. Convenciones de Nombrado Mixtas
 
@@ -63,11 +69,11 @@ COMMENT ON COLUMN water_management_systems.nombre_vereda IS
     'Nombre oficial según resolución 1234 de 2020 de la Alcaldía';
 ```
 
-### 1.5 Ejemplos de código
+### 1.4 Ejemplos de código
 
 A continuación, se presentan ejemplos de código que combinan términos técnicos en inglés con dominio en español. Estos ejemplos ilustran cómo se pueden aplicar las convenciones de codificación en diferentes contextos.
 
-#### 1.5.1 Ejemplo Consulta con PostGIS
+#### 1.4.1 Ejemplo Consulta con PostGIS
 
 El siguiente ejemplo muestra una consulta espacial que calcula el área de los sistemas de acueducto veredal en Bogotá. La consulta utiliza funciones PostGIS en inglés y nombres de columnas en español.
 
@@ -95,7 +101,7 @@ FROM upz_contaminacion
 ORDER BY promedio_pm25 DESC;
 ```
 
-#### 1.5.2 Ejemplo Función con Validación
+#### 1.4.2 Ejemplo Función con Validación
 
 El siguiente ejemplo muestra una función PL/pgSQL que valida rutas de transporte público en Bogotá. La función combina términos técnicos en inglés con mensajes de error en español para comunicar claramente las restricciones.
 
@@ -140,7 +146,7 @@ END;
 $$ LANGUAGE plpgsql;
 ```
 
-#### 1.5.3 Ejemplo Reglas de Validación
+#### 1.4.3 Ejemplo Reglas de Validación
 
 El siguiente ejemplo muestra cómo se pueden definir reglas de validación en una tabla de bases de datos. Las reglas de validación utilizan términos técnicos en inglés para las restricciones y mensajes en español para la comunicación con los usuarios.
 
@@ -157,7 +163,7 @@ COMMENT ON INDEX idx_rutas_transporte_geom IS
     'Índice espacial para optimizar consultas de rutas';
 ```
 
-### 1.6 Glosario Bilingüe
+### 1.5 Glosario Bilingüe
 
 El siguiente glosario bilingüe proporciona una lista de términos técnicos en inglés y sus equivalentes en español. Estos términos se pueden utilizar en la documentación y el código para mantener la coherencia y facilitar la comprensión de los desarrolladores.
 
@@ -173,7 +179,7 @@ El siguiente glosario bilingüe proporciona una lista de términos técnicos en 
 | `join`                       | unir/unión                                |
 | `view`                       | vista                               |
 
-### 1.7 Justificación de la Estrategia
+### 1.6 Justificación de la Estrategia
 
 La estrategia de codificación mixta se basa en la necesidad de combinar estándares internacionales con requisitos locales específicos. Algunas de las razones clave para esta estrategia son:
 
