@@ -25,6 +25,7 @@ Yeraldine alvarado
 
 ## Estudiantes Grupo 3B
 
+David Felipe Santafe Sanchez
 Cristian Gonzalez
 
 Gonzalo Enrique Gonzalez
