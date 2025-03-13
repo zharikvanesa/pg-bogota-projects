@@ -4,6 +4,7 @@
 
 ## Estudiantes Grupo 2B
 Juan David Hernandez Rivera
+Zharik Echeverria
 Angie Vanegas
 Carlos Andres Quintero
 william Andres Ambito Casso
