@@ -4,7 +4,7 @@
 
 ## Estudiantes Grupo 2B
 
-
+Carlos Andres Quintero
 
 ## Estudiantes Grupo 3B
 
