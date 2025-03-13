@@ -6,6 +6,8 @@
 
 william Andres Ambito Casso
 
+YERALDINE ALVARADO
+
 ## Estudiantes Grupo 3B
 
 Cristian Gonzalez
