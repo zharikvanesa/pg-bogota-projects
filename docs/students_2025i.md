@@ -4,7 +4,7 @@
 
 ## Estudiantes Grupo 2B
 
-
+Angie Delgado
 
 ## Estudiantes Grupo 3B
 
