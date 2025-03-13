@@ -3,8 +3,13 @@
 `Cristhian Moreno`
 
 ## Estudiantes Grupo 2B
-
 Juan David Hernandez Rivera
+
+
+Carlos Andres Quintero
+william Andres Ambito Casso
+YERALDINE ALVARADO
+
 
 ## Estudiantes Grupo 3B
 
