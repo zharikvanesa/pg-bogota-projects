@@ -4,6 +4,8 @@
 
 ## Estudiantes Grupo 2B
 
+Carlos Andres Quintero
+
 william Andres Ambito Casso
 
 YERALDINE ALVARADO
