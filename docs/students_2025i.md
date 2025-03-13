@@ -4,6 +4,8 @@
 
 ## Estudiantes Grupo 2B
 
+william Andres Ambito Casso
+
 YERALDINE ALVARADO
 
 ## Estudiantes Grupo 3B
