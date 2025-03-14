@@ -1,0 +1,17 @@
+# Resumen de Guías de Proyectos Técnicos - Bases de Datos Urbanas de Bogotá 2025  
+*"De los Datos a las Soluciones Cívicas: PostgreSQL en Acción"*  
+
+## Catálogo de Proyectos  
+
+| Grupo | Título del Proyecto | Funciones Clave de PostgreSQL | Desafío Principal | Fuente de Datos | Documento del Proyecto |  
+|-------|---------------------|-------------------------------|-------------------|-----------------|------------------------|  
+| 00 | **Geomonitorización en Tiempo Real de la Calidad del Aire** | PostGIS, JSONB, Window Functions | Correlacionar niveles de PM2.5 con hospitalizaciones respiratorias | [Secretaría de Ambiente](https://datosabiertos.bogota.gov.co/dataset/calidad-del-aire) | [air_quality_geomonitoring.md](./project_guides/00-air_quality_geomonitoring.md) |  
+| 01 | **Mapeo de Seguridad de Asentamientos Informales** | pgcrypto, Full-Text Search, Row-Level Security | Proteger datos de migrantes mientras se optimiza la distribución de subsidios | [Catastro Bogotá](https://www.catastrobogota.gov.co/) | [informal_settlements_geodata.md](./project_guides/01_informal_settlements_geodata.md) |  
+| 02 | **Optimización de Rutas Inteligentes de Residuos** | PgRouting, BRIN Indexes, Foreign Data Wrappers | Reducir el tiempo de recolección en un 25% en horas pico | [UAESP](https://www.uaesp.gov.co/) | [waste_route_optimization.md](./project_guides/02_waste_route_optimization.md) |  
+| 03 | **Sistema de Alerta Temprana para Inundaciones Relámpago** | PostGIS Raster, TimescaleDB, NOTIFY | Predecir inundaciones en menos de 5 min después de lluvias >50mm/h | [IDEAM](https://www.ideam.gov.co/) | [flood_alert_realtime.md](./project_guides/03_flood_alert_realtime.md) |  
+| 04 | **Análisis de Puntos Críticos de Accidentes de Motocicleta** | Apache Age, GIN Indexes, PL/Python | Reducir la tasa de colisiones en 10 intersecciones de alto riesgo | [ANSV](https://www.ansv.gov.co/) | [motorcycle_safety_spatial.md](./project_guides/04_motorcycle_safety_spatial.md) |  
+| 05 | **Plataforma de Gestión de Crisis Hídrica** | Timescale Hypertables, PostGIS Network | Detectar fugas que afectan a más de 500 hogares en 2 h | [EAAB](https://www.acueducto.com.co/) | [water_crisis_gis.md](./project_guides/05_water_crisis_gis.md) |  
+| 06 | **Aprendizaje Automático para el Riesgo de Deslizamientos** | PL/R, PostGIS 3D, BRIN Indexes | Predecir fallos de laderas con más del 85% de precisión | [IGAC Lidar](https://www.igac.gov.co/) | [landslide_geohazard_ml.md](./project_guides/06_landslide_geohazard_ml.md) |  
+| 07 | **Cadenas de Suministro Agrícola de Comercio Justo** | JSON Schema Validation, Apache Age | Reducir el desperdicio de alimentos en un 30% en la distribución | [Corabastos](https://www.corabastos.com.co/) | [fairtrade_market_optimization.md](./project_guides/07_fairtrade_market_optimization.md) |  
+| 08 | **Planificación de Vendedores Centrada en el Peatón** | Network Analysis, Transactional Outbox | Asignar más de 500 puestos informales de vendedores sin congestión | [SCRD](https://www.culturarecreacionydeporte.gov.co/) | [public_space_vendorplanning.md](./project_guides/08_public_space_vendorplanning.md) |  
+| 09 | **Analítica Espacial de la Salud Respiratoria** | Diagramas de Voronoi, pg_stat_statements | Optimizar la ubicación de clínicas dentro de 1 km de zonas de alto riesgo | [SaluData](https://saludata.saludcapital.gov.co/) | [public_health_geodata.md](./project_guides/09_public_health_geodata.md) |  
