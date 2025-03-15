@@ -3,6 +3,6 @@
 Juan Esteban Mancera Romero  - JuanMancera108
 
 # Integrantes 
-Yeraldine alvarado
+Yeraldine alvarado - YERAL95
 
-Zharik Echeverria
+Zharik Echeverria - zharikvanesa
